@@ -1,0 +1,62 @@
+{
+  "RAW-RDF+": [
+    {
+      "name": "rdf",
+      "local_dir": "__rdf",
+      "zip_name": "South_Korea_RDF_CurveHeightSlope",
+      "post_process_method": "extract_kor_zip",
+      "check_method": "check_file_with_version",
+      "ref_files": [
+        "KRAM{v}WKR000QKAA2_ADAS.tar",
+        "KRAM{v}WKR000QKAA2_CORE.tar",
+        "KRAM{v}WKR000QKAA2_WKT.tar",
+        "KRAM{v}WKR000QKAA2_rdf_customer_software.tar"]
+    },
+    {
+      "name": "landmark",
+      "local_dir": "components/3dlandmark_vendor",
+      "zip_name": "3D_Landmarks_Korea",
+      "post_process_method": "rename_kor_landmark_package",
+      "check_method": "check_file_fixed_name",
+      "ref_files": ["KOR.zip"]
+    },
+    {
+      "name": "speed_camera",
+      "local_dir": "components/speed_camera",
+      "zip_name": "Safety_Cameras_Korea",
+      "post_process_method": "extract_kor_speed_camera",
+      "check_method": "check_by_folder",
+      "ref_files": ["./"]
+    },
+    {
+      "name": "new_address",
+      "local_dir": "components/NEW_ADDRESS",
+      "zip_name": "New_Address_Korea",
+      "post_process_method": "extract_kor_zip",
+      "check_method": "check_file_fixed_name",
+      "ref_files": ["UTF8_NEW_ADDR.TXT", "UTF8_NEW_ADDR_E.TXT"]
+    }
+  ],
+  "RAW-JUNCTION": [
+    {
+      "name": "junction_view",
+      "local_dir": "components/junction_view",
+      "zip_name": "Junction_Views_Korea",
+      "post_process_method": "rename_kor_jv_package",
+      "check_method": "check_file_fixed_name",
+      "ref_files": ["KOR_JV.zip"]
+    }
+  ],
+  "TOLLCOST": [
+    {
+      "name": "toll_cost",
+      "local_dir": "components/TOLLCOST",
+      "s3_dir": "s3://gmkorea-data/latest_builds/TOLLCOST",
+      "zip_name": "Toll_Cost_Korea",
+      "post_process_method": "extract_kor_zip",
+      "check_method": "check_file_fixed_name",
+      "ref_files": ["DUMMYTG_PAIR_TABLE.TXT", "EXC_DEF_TABLE.TXT", "EXC_TABLE1.TXT", "EXC_TABLE2.TXT",
+                    "EXC_TABLE3.TXT", "TGMATCH.TXT", "TOLLFARE.TXT"]
+    }
+  ]
+}

@@ -1,0 +1,1352 @@
+{
+  "ANZ": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Australia",
+        "here_release": ["Oceania RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NXAM{v}WNX000QAAD8_ADAS.tar",
+          "NXAM{v}WNX000QAAD8_CORE.tar",
+          "NXAM{v}WNX000QAAD8_WKT.tar",
+          "NXAM{v}WNX000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content APAC",
+        "here_release": ["3D Landmarks Oceania"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["AUS.zip", "NZL.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_AU_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Safety Cameras Transition Oceania"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["AUS/AUS", "NZL/NZL"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Junctions Oceania"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NXAM{v}WNX000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Signs Oceania"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NXAM{v}WNX000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Junctions Oceania"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NXAM{v}WNX000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Signs Oceania"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NXAM{v}WNX000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Patterns LINK Oceania"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_AUS_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_AUS_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_COUNTRYLUT_OCE_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_OCE_LINK_FC5_{v}.csv.gz",
+          "NTP_NZL_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_NZL_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_REF_OCE_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_OCE_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_OCE_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_OCE_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_OCE_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_OCE_60MIN_MPH_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Location Tables Oceania"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["NXAM{v}WNX000DAA00.tar"]
+      }
+    ],
+    "RAW-REGULATION": [
+      {
+        "name": "commercial_vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content APAC",
+        "here_release": ["HERE Commercial Vehicle Regulations Oceania"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["NXAM{v}WNX000DCVRG.tar"]
+      },
+      {
+        "name": "vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content APAC",
+        "here_release": ["HERE Vehicle Regulations Oceania"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["NXAM{v}WNX000DVREG.tar"]
+      }
+    ]
+  },
+  "EU": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Europe, Middle East, Africa",
+        "here_release": ["Europe East RDF", "Europe West RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "UEAM{v}EUE000QAAD8_ADAS.tar",
+          "UEAM{v}EUE000QAAD8_CORE.tar",
+          "UEAM{v}EUE000QAAD8_WKT.tar",
+          "UEAM{v}EUE000QAAD8_rdf_customer_software.tar",
+          "UWAM{v}EUW000QAAD8_ADAS.tar",
+          "UWAM{v}EUW000QAAD8_CORE.tar",
+          "UWAM{v}EUW000QAAD8_WKT.tar",
+          "UWAM{v}EUW000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["3D Landmarks EEU", "3D Landmarks WEU"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": [
+          "ALB.zip", "AND.zip", "ARM.zip", "AUT.zip", "AZE.zip", "BEL.zip", "BGR.zip", "BIH.zip", "BLR.zip", "CHE.zip",
+          "CYP.zip", "CZE.zip", "DEU.zip", "DNK.zip", "ESP.zip", "EST.zip", "FIN.zip", "FRA.zip", "GBR.zip", "GEO.zip",
+          "GIB.zip", "GRC.zip", "HRV.zip", "HUN.zip", "IRL.zip", "ISL.zip", "ITA.zip", "KAZ.zip", "KGZ.zip", "XKO.zip",
+          "LIE.zip", "LTU.zip", "LUX.zip", "LVA.zip", "MCO.zip", "MDA.zip", "MKD.zip", "MNE.zip", "XNC.zip", "NLD.zip",
+          "NOR.zip", "POL.zip", "PRT.zip", "ROU.zip", "RUS.zip", "SJM.zip", "SMR.zip", "SRB.zip", "SVK.zip", "SVN.zip",
+          "SWE.zip", "TJK.zip", "TKM.zip", "TUR.zip", "UKR.zip", "UZB.zip", "VAT.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_EEU_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv",
+                      "{v}_WEU_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Safety Cameras Transition Europe"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": [
+          "AND", "AUT", "AZE", "BEL", "BGR", "BIH", "BLR", "CYP", "CZE", "DNK", "ESP", "EST", "FIN", "FRA", "GBR",
+          "GRC", "HRV", "HUN", "ISL", "ITA", "KAZ", "LTU", "LUX", "LVA", "MLT", "NLD", "NOR", "POL", "PRT",
+          "ROU", "RUS", "SRB", "SVK", "SVN", "SWE", "TUR", "UKR"]
+      },
+      {
+        "name": "postal_code",
+        "local_dir": "components/postal_code",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Postal Code Points Great Britain", "Postal Code Points Netherlands", "Postal Code Points United Kingdom"],
+        "post_process_method": "extract_postal_code",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["GB_POSTAL_CODE.txt", "NI_POSTAL_CODE.txt", "NL_POSTAL_CODE.txt", "UK_POSTAL_CODE.txt", "UK_PO_BOX_POSTAL_CODE.txt"]
+      },
+      {
+        "name": "postal_address",
+        "local_dir": "components/postal_address",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Postal Addressing LAT Europe"],
+        "post_process_method": "extract_postal_address",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "{v}_GBR_POSTAL_ADDRESS.txt", "{v}_GBR_ROAD_ANCHOR.txt", "{v}_IRL_POSTAL_ADDRESS.txt", "{v}_IRL_ROAD_ANCHOR.txt",
+          "{v}_NLD_POSTAL_ADDRESS.txt", "{v}_NLD_ROAD_ANCHOR.txt", "{v}_PRT_POSTAL_ADDRESS.txt", "{v}_PRT_ROAD_ANCHOR.txt"]
+      },
+      {
+        "name": "environmental_zones",
+        "local_dir": "components/environmental_zones",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Environmental Zones Europe"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["EUAM{v}EEU000DRN05.tar", "EUCN{v}EEU000LADAA.tar"]
+      },
+      {
+        "name": "toll_cost",
+        "type": "tn_private_layer",
+        "raw_data_dir": "s3://tnavmapdata/raw_data/TN/tollcost/latest",
+        "local_dir": "components/TOLLCOST",
+        "check_method": "check_tn_toll_cost"
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Generalized Junctions EEU", "2D Generalized Junctions WEU"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["UEAM{v}EUE000DGNJV.tar", "UWAM{v}EUW000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Generalized Signs EEU", "2D Generalized Signs WEU"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["UEAM{v}EUE000DGNMS.tar", "UWAM{v}EUW000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Junctions EEU", "2D Junctions WEU"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["UEAM{v}EUE000DDK00.tar", "UWAM{v}EUW000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Signs EEU", "2D Signs WEU"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["UEAM{v}EUE000DDZ00.tar", "UWAM{v}EUW000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Patterns LINK Europe"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_BEL_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_BEL_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_COUNTRYLUT_EU_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_EU_LINK_FC5_{v}.csv.gz",
+          "NTP_DEU_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_DEU_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_FRA_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_FRA_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_GBR07_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_GBR07_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_LUX_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_LUX_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_NLD_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_NLD_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_REF_EU_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_EU_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_EU_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_EU_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_EU_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_EU_60MIN_MPH_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Bulgaria_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Bulgaria (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Croatia_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Croatia (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Cyprus_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Cyprus (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Estonia_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Estonia (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Greece_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Greece (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Hungary_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Hungary (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Ireland_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Ireland (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Latvia_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Latvia (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Lithuania_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Lithuania (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Poland_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Poland (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Portugal_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Portugal (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Romania_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Romania (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Russia_HERE",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Russia (HERE)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Serbia_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Serbia (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Slovenia_TrafficNav",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Slovenia (TrafficNav)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Turkey_HERE",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Turkiye (HERE)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Ukraine_HERE",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Ukraine (HERE)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location/Kazakhstan_HERE",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Kazakhstan (HERE)"]
+      },
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables Europe (No 3rd Party Restrictions)"],
+        "post_process_method": "package_eu_traffic_location",
+        "check_method": "check_eu_traffic_location",
+        "ref_files": [
+          "Andorra", "Austria", "Belgium", "Bulgaria_TrafficNav", "Croatia_TrafficNav", "Cyprus_TrafficNav",
+          "Czech_CEDA", "Denmark", "Estonia_TrafficNav", "Finland", "France_Sétra", "Germany_BASt", "Greece",
+          "Greece_TrafficNav", "Hungary_TrafficNav", "Ireland", "Ireland_TrafficNav", "Italy", "Kazakhstan_HERE",
+          "Latvia_TrafficNav", "Lithuania_TrafficNav", "Luxembourg", "Netherlands", "Norway", "PL_LT_30630",
+          "Poland_TrafficNav", "Portugal_TrafficNav", "Romania_AROBS", "Romania_TrafficNav", "Russia_HERE",
+          "Serbia_TrafficNav", "Slovakia", "Slovakia_SSC", "Slovenia", "Slovenia_TrafficNav", "Spain", "Sweden",
+          "Switzerland", "Turkey_HERE", "UK/INRIX", "UK/TrafficMaster", "Ukraine_HERE"]
+      }
+    ],
+    "RAW-REGULATION": [
+      {
+        "name": "commercial_vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["HERE Commercial Vehicle Regulations EEU", "HERE Commercial Vehicle Regulations WEU"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["UEAM{v}EUE000DCVRG.tar", "UWAM{v}EUW000DCVRG.tar"]
+      },
+      {
+        "name": "vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["HERE Vehicle Regulations EEU", "HERE Vehicle Regulations WEU"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["UEAM{v}EUE000DVREG.tar", "UWAM{v}EUW000DVREG.tar"]
+      }
+    ]
+  },
+  "TUR": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Europe, Middle East, Africa",
+        "here_release": ["Europe East RDF Turkiye Geopolitical View"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "T9AM{v}ET9000QAAD8_ADAS.tar",
+          "T9AM{v}ET9000QAAD8_CORE.tar",
+          "T9AM{v}ET9000QAAD8_WKT.tar",
+          "T9AM{v}ET9000QAAD8_rdf_customer_software.tar"]
+      }
+    ]
+  },
+  "ISC": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "India",
+        "here_release": ["India RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "RRAM{v}WRR000QAAD8_ADAS.tar",
+          "RRAM{v}WRR000QAAD8_CORE.tar",
+          "RRAM{v}WRR000QAAD8_WKT.tar",
+          "RRAM{v}WRR000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content APAC",
+        "here_release": ["3D Landmarks India"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["IND01.zip", "IND02.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_RN_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Junctions India"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["5RAM{v}W5R000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Signs India"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["5RAM{v}W5R000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Junctions India"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["5RAM{v}W5R000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Signs India"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["5RAM{v}W5R000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Patterns LINK India"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_COUNTRYLUT_IND_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_IND_LINK_FC5_{v}.csv.gz",
+          "NTP_IND_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_IND_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_REF_IND_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_IND_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_IND_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_IND_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_IND_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_IND_60MIN_MPH_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Location Tables India"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["5RAM{v}W5R000DAA00.tar"]
+      }
+    ]
+  },
+  "MEA": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Europe, Middle East, Africa",
+        "here_release": ["Middle East, Africa RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "VMAM{v}WVM000QAAD8_ADAS.tar",
+          "VMAM{v}WVM000QAAD8_CORE.tar",
+          "VMAM{v}WVM000QAAD8_WKT.tar",
+          "VMAM{v}WVM000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["3D Landmarks MEA"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": [
+          "AGO.zip", "ARE.zip", "BDI.zip", "BEN.zip", "BHR.zip", "BWA.zip", "CIV.zip", "DZA.zip", "EGY.zip", "GHA.zip",
+          "IRQ.zip", "ISR.zip", "JOR.zip", "KEN.zip", "KWT.zip", "LBN.zip", "LBY.zip", "MAR.zip", "MOZ.zip", "MWI.zip",
+          "NGA.zip", "OMN.zip", "QAT.zip", "RWA.zip", "SAU.zip", "TGO.zip", "TUN.zip", "TZA.zip", "UGA.zip", "ZAF.zip",
+          "ZMB.zip"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Safety Cameras Transition MEA"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["ARE", "BHR", "ISR", "KWT", "OMN", "QAT", "SAU", "ZAF"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_MEA_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Generalized Junctions MEA"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VMAM{v}WVM000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Generalized Signs MEA"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VMAM{v}WVM000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Junctions MEA"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VMAM{v}WVM000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["2D Signs MEA"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VMAM{v}WVM000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Patterns LINK MEA"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_COUNTRYLUT_MEA_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_MEA_LINK_FC5_{v}.csv.gz",
+          "NTP_REF_MEA_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_MEA_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_MEA_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_MEA_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_MEA_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_MEA_60MIN_MPH_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["Traffic Location Tables MEA"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["VMAM{v}WVM000DAA00.tar"]
+      }
+    ],
+    "RAW-REGULATION": [
+      {
+        "name": "commercial_vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["HERE Commercial Vehicle Regulations MEA"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["VMAM{v}WVM000DCVRG.tar"]
+      },
+      {
+        "name": "vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Europe, Middle East, Africa",
+        "here_release": ["HERE Vehicle Regulations MEA"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["VMAM{v}WVM000DVREG.tar"]
+      }
+    ]
+  },
+  "NA": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "North America",
+        "here_release": ["North America RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NAAM{v}NNA000QAAD8_ADAS.tar",
+          "NAAM{v}NNA000QAAD8_CORE.tar",
+          "NAAM{v}NNA000QAAD8_WKT.tar",
+          "NAAM{v}NNA000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content Americas",
+        "here_release": ["3D Landmarks North America"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["CAN.zip", "MEX.zip", "PAN.zip", "PRI.zip", "USA.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_NA_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content Americas",
+        "here_release": ["Safety Cameras Transition North America",
+                         "Safety Cameras Transition Mexico"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "11", "MEX"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Generalized Junctions North America"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NAAM{v}NNA000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Generalized Signs North America"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NAAM{v}NNA000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Junctions North America"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NAAM{v}NNA000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Signs North America"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["NAAM{v}NNA000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content Americas",
+        "here_release": ["Traffic Patterns LINK North America"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_CAN_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_CAN_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_COUNTRYLUT_NA_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_NA_LINK_FC5_{v}.csv.gz",
+          "NTP_REF_NA_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_NA_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_NA_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_NA_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_NA_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_NA_60MIN_MPH_{v}.csv.gz",
+          "NTP_USA_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_USA_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content Americas",
+        "here_release": ["Traffic Location Tables North America"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["NAAM{v}NNA000DAA00.tar"]
+      }
+    ],
+    "RAW-REGULATION": [
+      {
+        "name": "commercial_vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Americas",
+        "here_release": ["HERE Commercial Vehicle Regulations North America"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["NAAM{v}NNA000DCVRG.tar"]
+      },
+      {
+        "name": "vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Americas",
+        "here_release": ["HERE Vehicle Regulations North America"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["NAAM{v}NNA000DVREG.tar"]
+      }
+    ]
+  },
+  "PAK": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Pakistan-DispTrty",
+        "here_release": ["Pakistan-DispTrty RDF"],
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": [
+          "PLAM{v}WPL000QAACS_ADAS.tar",
+          "PLAM{v}WPL000QAACS_CORE.tar",
+          "PLAM{v}WPL000QAACS_WKT.tar",
+          "PLAM{v}WPL000QAACS_rdf_customer_software.tar"]
+      }
+    ]
+  },
+  "SA": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "South America",
+        "here_release": ["South America RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "SZAM{v}WSZ000QAAD8_ADAS.tar",
+          "SZAM{v}WSZ000QAAD8_CORE.tar",
+          "SZAM{v}WSZ000QAAD8_WKT.tar",
+          "SZAM{v}WSZ000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content Americas",
+        "here_release": ["3D Landmarks South America"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["ARG.zip", "BRA.zip", "CHL.zip", "COL.zip", "PER.zip", "URY.zip", "VEN.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_SAM_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content Americas",
+        "here_release": ["Safety Cameras Transition South America"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["ARG", "BRA", "CHL"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Generalized Junctions South America"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["SZAM{v}WSZ000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Generalized Signs South America"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["SZAM{v}WSZ000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Junctions South America"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["SZAM{v}WSZ000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content Americas",
+        "here_release": ["2D Signs South America"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["SZAM{v}WSZ000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content Americas",
+        "here_release": ["Traffic Patterns LINK South America"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_COUNTRYLUT_SAM_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_SAM_LINK_FC5_{v}.csv.gz",
+          "NTP_REF_SAM_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_SAM_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_SAM_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_SAM_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_SAM_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_SAM_60MIN_MPH_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content Americas",
+        "here_release": ["Traffic Location Tables South America"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["SZAM{v}WSZ000DAA00.tar"]
+      }
+    ],
+    "RAW-REGULATION": [
+      {
+        "name": "commercial_vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Americas",
+        "here_release": ["HERE Commercial Vehicle Regulations South America"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["SZAM{v}WSZ000DCVRG.tar"]
+      },
+      {
+        "name": "vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content Americas",
+        "here_release": ["HERE Vehicle Regulations South America"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["SZAM{v}WSZ000DVREG.tar"]
+      }
+    ]
+  },
+  "SEA": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Asia Pacific",
+        "here_release": ["Asia Pacific RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "PZAM{v}WPZ000QAAD8_ADAS.tar",
+          "PZAM{v}WPZ000QAAD8_CORE.tar",
+          "PZAM{v}WPZ000QAAD8_WKT.tar",
+          "PZAM{v}WPZ000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content APAC",
+        "here_release": ["3D Landmarks Asia Pacific"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["BRN.zip", "IDN.zip", "MMR.zip", "MYS.zip", "PHL.zip", "SGP.zip", "THA.zip", "VNM.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_APAC_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Safety Cameras Transition Asia Pacific"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["MYS", "SGP", "THA", "VNM", "IDN", "PHL"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Junctions Asia Pacific"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["WZAM{v}WWZ000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Signs Asia Pacific"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["WZAM{v}WWZ000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Junctions Asia Pacific"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["WZAM{v}WWZ000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Signs Asia Pacific"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["WZAM{v}WWZ000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Patterns LINK Asia Pacific"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_COUNTRYLUT_APAC_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_APAC_LINK_FC5_{v}.csv.gz",
+          "NTP_IDN_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_IDN_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_MYS_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_MYS_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_REF_APAC_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_APAC_LINK_FC5_{v}.csv.gz",
+          "NTP_SGP_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_SGP_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_SPD_APAC_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_APAC_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_APAC_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_APAC_60MIN_MPH_{v}.csv.gz",
+          "NTP_THA_15MIN_HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_THA_60MIN_HOLIDAYAPPENDIX_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Location Tables Asia Pacific"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["WZAM{v}WWZ000DAA00.tar"]
+      }
+    ],
+    "RAW-REGULATION": [
+      {
+        "name": "commercial_vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content APAC",
+        "here_release": ["HERE Commercial Vehicle Regulations Asia Pacific"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["PZAM{v}WPZ000DCVRG.tar"]
+      },
+      {
+        "name": "vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content APAC",
+        "here_release": ["HERE Vehicle Regulations Asia Pacific"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["WZAM{v}WWZ000DVREG.tar"]
+      }
+    ]
+  },
+  "TWN": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Taiwan",
+        "here_release": ["Taiwan RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "VDAM{v}WVD000QAAD8_ADAS.tar",
+          "VDAM{v}WVD000QAAD8_CORE.tar",
+          "VDAM{v}WVD000QAAD8_WKT.tar",
+          "VDAM{v}WVD000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content APAC",
+        "here_release": ["3D Landmarks Taiwan"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["TWN.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_TWN_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Safety Cameras Transition Taiwan"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["TWN"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Junctions Taiwan"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VDAM{v}WVD000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Signs Taiwan"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VDAM{v}WVD000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Junctions Taiwan"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VDAM{v}WVD000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Signs Taiwan"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "ref_files": ["VDAM{v}WVD000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Patterns LINK Taiwan"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NTP_COUNTRYLUT_TWN_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_TWN_LINK_FC5_{v}.csv.gz",
+          "NTP_REF_TWN_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_TWN_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_TWN_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_TWN_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_TWN_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_TWN_60MIN_MPH_{v}.csv.gz"]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Location Tables Taiwan"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["VDAM{v}WVD000DAA00.tar"]
+      }
+    ],
+    "RAW-REGULATION": [
+      {
+        "name": "commercial_vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content APAC",
+        "here_release": ["HERE Commercial Vehicle Regulations Taiwan"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["VDAM{v}WVD000DCVRG.tar"]
+      },
+      {
+        "name": "vehicle_regulations",
+        "local_dir": "components/regulation",
+        "here_product": "Additional Content APAC",
+        "here_release": ["HERE Vehicle Regulations Taiwan"],
+        "check_method": "check_file_with_version",
+        "ref_files": ["VDAM{v}WVD000DVREG.tar"]
+      }
+    ]
+  },
+  "HKM": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf_hkg",
+        "local_dir": "__rdf",
+        "here_product": "Hong Kong",
+        "here_release": ["Hong Kong RDF"],
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": [
+          "W4AM{v}WW4000QAAD8_ADAS.tar",
+          "W4AM{v}WW4000QAAD8_CORE.tar",
+          "W4AM{v}WW4000QAAD8_WKT.tar",
+          "W4AM{v}WW4000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "rdf_mac",
+        "local_dir": "__rdf",
+        "here_product": "Macau",
+        "here_release": ["Macau RDF"],
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": [
+          "WNAM{v}WWN000QAAD8_ADAS.tar",
+          "WNAM{v}WWN000QAAD8_CORE.tar",
+          "WNAM{v}WWN000QAAD8_WKT.tar",
+          "WNAM{v}WWN000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "here_product": "Additional Content APAC",
+        "here_release": ["3D Landmarks Hong Kong Standalone", "3D Landmarks Macau Standalone"],
+        "post_process_method": "extract_landmark",
+        "check_method": "check_file_fixed_name",
+        "standalone_version": "True",
+        "ref_files": ["HKG.zip","MAC.zip"]
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": ["{v}_HKG_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv",
+                      "{v}_MAC_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"]
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Safety Cameras Transition Hong Kong", "Safety Cameras Transition Macau"],
+        "post_process_method": "extract_speed_camera",
+        "check_method": "check_by_folder",
+        "standalone_version": "True",
+        "ref_files": ["HKG", "MAC"]
+      }
+    ],
+    "RAW-JUNCTION": [
+      {
+        "name": "2d_generalized_junctions",
+        "local_dir": "components/junction_view/2D_Generalized_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Junctions Hong Kong Standalone", "2D Generalized Junctions Macau Standalone"],
+        "post_process_method": "extract_gjv",
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": ["W4AM{v}WW4000DGNJV.tar", "WNAM{v}WWN000DGNJV.tar"]
+      },
+      {
+        "name": "2d_generalized_signs",
+        "local_dir": "components/junction_view/2D_Generalized_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Generalized Signs Hong Kong Standalone", "2D Generalized Signs Macau Standalone"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": ["W4AM{v}WW4000DGNMS.tar", "WNAM{v}WWN000DGNMS.tar"]
+      },
+      {
+        "name": "2d_junctions",
+        "local_dir": "components/junction_view/2D_Junctions",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Junctions Hong Kong Standalone"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": ["W4AM{v}WW4000DDK00.tar"]
+      },
+      {
+        "name": "2d_signs",
+        "local_dir": "components/junction_view/2D_Signs",
+        "here_product": "Additional Content APAC",
+        "here_release": ["2D Signs Hong Kong Standalone"],
+        "post_process_method": "extract_junction",
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": ["W4AM{v}WW4000DDZ00.tar"]
+      }
+    ],
+    "RAW-SPEEDPATTERN": [
+      {
+        "name": "speed_pattern",
+        "local_dir": "components/speed_pattern",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Patterns LINK Hong Kong Standalone", "Traffic Patterns LINK Macau Standalone"],
+        "post_process_method": "extract_speed_pattern",
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": [
+          "NTP_COUNTRYLUT_HK_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_HK_LINK_FC5_{v}.csv.gz",
+          "NTP_COUNTRYLUT_MAC_LINK_FC1-4_{v}.csv.gz",
+          "NTP_COUNTRYLUT_MAC_LINK_FC5_{v}.csv.gz",
+          "NTP_HKG_15MIN_V2HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_HKG_60MIN_V2HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_MAC_15MIN_V2HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_MAC_60MIN_V2HOLIDAYAPPENDIX_{v}.csv.gz",
+          "NTP_REF_HK_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_HK_LINK_FC5_{v}.csv.gz",
+          "NTP_REF_MAC_LINK_FC1-4_{v}.csv.gz",
+          "NTP_REF_MAC_LINK_FC5_{v}.csv.gz",
+          "NTP_SPD_HK_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_HK_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_HK_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_HK_60MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_MAC_15MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_MAC_15MIN_MPH_{v}.csv.gz",
+          "NTP_SPD_MAC_60MIN_KPH_{v}.csv.gz",
+          "NTP_SPD_MAC_60MIN_MPH_{v}.csv.gz"
+        ]
+      }
+    ],
+    "RAW-TRAFFICLOCATION": [
+      {
+        "name": "traffic_location",
+        "local_dir": "components/traffic_location",
+        "here_product": "Additional Content APAC",
+        "here_release": ["Traffic Location Tables Hong Kong Standalone", "Traffic Location Tables Macau Standalone"],
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": ["W4AM{v}WW4000DAA00.tar", "WNAM{v}WWN000DAA00.tar"]
+      }
+    ]
+  }
+}

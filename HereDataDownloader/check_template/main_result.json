@@ -1,0 +1,24 @@
+{
+  "region": "EU",
+  "version": "22Q3",
+  "time": "2022-08-09 10:57:35",
+  "cygnus_components": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "status": "Pass",
+        "ref_count": "8",
+        "pass": "8",
+        "warning": "0",
+        "error": "0",
+        "update_time": "2022-07-25 08:35:37",
+        "here_schedule": "2022-07-28",
+        "detail_link": "rdf.html"
+      },
+      {
+        "name": "landmark",
+        "status": "Not ready"
+      }
+    ]
+  }
+}

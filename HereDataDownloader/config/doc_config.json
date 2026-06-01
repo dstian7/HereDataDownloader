@@ -1,0 +1,63 @@
+{
+  "ctrg": {
+    "local_dir": "CTRG",
+    "here_product": "Documentation",
+    "here_release": "CTRG The Customer Technical Reference Guide"
+  },
+  "release_note": [
+    {
+      "local_dir": "release_note/NA",
+      "here_product": "Release Notes Americas",
+      "here_release": "Data Product Release Notes North America"
+    },
+    {
+      "local_dir": "release_note/SA",
+      "here_product": "Release Notes Americas",
+      "here_release": "Data Product Release Notes South America"
+    },
+    {
+      "local_dir": "release_note/EEU",
+      "here_product": "Release Notes Europe",
+      "here_release": "Data Product Release Notes Europe East"
+    },
+    {
+      "local_dir": "release_note/WEU",
+      "here_product": "Release Notes Europe",
+      "here_release": "Data Product Release Notes Europe West"
+    },
+    {
+      "local_dir": "release_note/ANZ",
+      "here_product": "Release Notes Asia Pacific",
+      "here_release": "Data Product Release Notes Oceania"
+    },
+    {
+      "local_dir": "release_note/SEA",
+      "here_product": "Release Notes Asia Pacific",
+      "here_release": "Data Product Release Notes Asia Pacific"
+    },
+    {
+      "local_dir": "release_note/TWN",
+      "here_product": "Release Notes Asia Pacific",
+      "here_release": "Data Product Release Notes Taiwan"
+    },
+    {
+      "local_dir": "release_note/ISC",
+      "here_product": "Release Notes Asia Pacific",
+      "here_release": "Data Product Release Notes India"
+    },
+    {
+      "local_dir": "release_note/MEA",
+      "here_product": "Release Notes Middle East Africa",
+      "here_release": "Data Product Release Notes Middle East and Africa"
+    }
+  ],
+  "tnm": {
+    "local_dir": "HERE_TNM",
+    "here_product": "Documentation",
+    "here_release": "HERE Technical Notification Memorandum"
+  },
+  "product_available_dates": {
+    "local_dir": "Product_Availability_Dates",
+    "here_product": "Documentation"
+  }
+}

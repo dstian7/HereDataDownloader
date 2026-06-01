@@ -1,0 +1,21 @@
+{
+  "component": "rdf",
+  "details": [
+      {
+        "file_name": "UEAM221F0EUE000QAAD8_ADAS.tar",
+        "file_size": 8708986880,
+        "ref_file_name": "UEAM221E0EUE000QAAD8_ADAS.tar",
+        "ref_file_size": 8662507520,
+        "status": "pass",
+        "message": ""
+      },
+      {
+        "file_name": "UWAM221F0EUW000QAAD8_ADAS.tar",
+        "file_size": "",
+        "ref_file_name": "",
+        "ref_file_size": "",
+        "status": "error",
+        "message": "file missing"
+      }
+    ]
+}

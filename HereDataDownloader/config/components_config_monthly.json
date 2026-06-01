@@ -1,0 +1,253 @@
+{
+  "ANZ": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Australia",
+        "here_release": ["Oceania {v} RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "NXAM{v}WNX000QAAD8_ADAS.tar",
+          "NXAM{v}WNX000QAAD8_CORE.tar",
+          "NXAM{v}WNX000QAAD8_WKT.tar",
+          "NXAM{v}WNX000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["AUS.zip", "NZL.zip"],
+        "action": "reuse"
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_AU_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"],
+        "action": "reuse"
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["AUS/AUS", "NZL/NZL"],
+        "action": "reuse"
+      }
+    ]
+  },
+  "EU": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Europe, Middle East, Africa",
+        "here_release": ["Europe East {v} RDF", "Europe West {v} RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "UEAM{v}EUE000QAAD8_ADAS.tar",
+          "UEAM{v}EUE000QAAD8_CORE.tar",
+          "UEAM{v}EUE000QAAD8_WKT.tar",
+          "UEAM{v}EUE000QAAD8_rdf_customer_software.tar",
+          "UWAM{v}EUW000QAAD8_ADAS.tar",
+          "UWAM{v}EUW000QAAD8_CORE.tar",
+          "UWAM{v}EUW000QAAD8_WKT.tar",
+          "UWAM{v}EUW000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "check_method": "check_file_fixed_name",
+        "ref_files": [
+          "ALB.zip", "AND.zip", "ARM.zip", "AUT.zip", "AZE.zip", "BEL.zip", "BGR.zip", "BIH.zip", "BLR.zip", "CHE.zip",
+          "CYP.zip", "CZE.zip", "DEU.zip", "DNK.zip", "ESP.zip", "EST.zip", "FIN.zip", "FRA.zip", "GBR.zip", "GEO.zip",
+          "GIB.zip", "GRC.zip", "HRV.zip", "HUN.zip", "IRL.zip", "ISL.zip", "ITA.zip", "KAZ.zip", "KGZ.zip", "XKO.zip",
+          "LIE.zip", "LTU.zip", "LUX.zip", "LVA.zip", "MCO.zip", "MDA.zip", "MKD.zip", "MNE.zip", "XNC.zip", "NLD.zip",
+          "NOR.zip", "POL.zip", "PRT.zip", "ROU.zip", "RUS.zip", "SJM.zip", "SMR.zip", "SRB.zip", "SVK.zip", "SVN.zip",
+          "SWE.zip", "TJK.zip", "TKM.zip", "TUR.zip", "UKR.zip", "UZB.zip", "VAT.zip"],
+        "action": "reuse"
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_EEU_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv",
+                      "{v}_WEU_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"],
+        "action": "reuse"
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": [
+          "AND", "AUT", "AZE", "BEL", "BGR", "BIH", "BLR", "CYP", "CZE", "DNK", "ESP", "EST", "FIN", "FRA", "GBR",
+          "GRC", "HRV", "HUN", "ISL", "ITA", "KAZ", "LTU", "LUX", "LVA", "MLT", "NLD", "NOR", "POL", "PRT",
+          "ROU", "RUS", "SRB", "SVK", "SVN", "SWE", "TUR", "UKR"],
+        "action": "reuse"
+      },
+      {
+        "name": "postal_code",
+        "local_dir": "components/postal_code",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["GB_POSTAL_CODE.txt", "NI_POSTAL_CODE.txt", "NL_POSTAL_CODE.txt", "UK_POSTAL_CODE.txt", "UK_PO_BOX_POSTAL_CODE.txt"],
+        "action": "reuse"
+      },
+      {
+        "name": "postal_address",
+        "local_dir": "components/postal_address",
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "{v}_GBR_POSTAL_ADDRESS.txt", "{v}_GBR_ROAD_ANCHOR.txt", "{v}_IRL_POSTAL_ADDRESS.txt", "{v}_IRL_ROAD_ANCHOR.txt",
+          "{v}_NLD_POSTAL_ADDRESS.txt", "{v}_NLD_ROAD_ANCHOR.txt", "{v}_PRT_POSTAL_ADDRESS.txt", "{v}_PRT_ROAD_ANCHOR.txt"],
+        "action": "reuse"
+      },
+      {
+        "name": "environmental_zones",
+        "local_dir": "components/environmental_zones",
+        "check_method": "check_file_with_version",
+        "ref_files": ["EUAM{v}EEU000DRN05.tar"],
+        "action": "reuse"
+      },
+      {
+        "name": "toll_cost",
+        "type": "tn_private_layer",
+        "raw_data_dir": "s3://tnavmapdata/raw_data/TN/tollcost/latest",
+        "local_dir": "components/TOLLCOST",
+        "check_method": "check_tn_toll_cost"
+      }
+    ]
+  },
+  "SEA": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Asia Pacific",
+        "here_release": ["Asia Pacific {v} RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "PZAM{v}WPZ000QAAD8_ADAS.tar",
+          "PZAM{v}WPZ000QAAD8_CORE.tar",
+          "PZAM{v}WPZ000QAAD8_WKT.tar",
+          "PZAM{v}WPZ000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["BRN.zip", "IDN.zip", "MMR.zip", "MYS.zip", "PHL.zip", "SGP.zip", "THA.zip", "VNM.zip"],
+        "action": "reuse"
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_APAC_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"],
+        "action": "reuse"
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["MYS", "SGP", "THA", "VNM", "IDN", "PHL"],
+        "action": "reuse"
+      }
+    ]
+  },
+  "HKM": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf_hkg",
+        "local_dir": "__rdf",
+        "here_product": "Hong Kong",
+        "here_release": ["Hong Kong {v} RDF"],
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": [
+          "W4AM{v}WW4000QAAD8_ADAS.tar",
+          "W4AM{v}WW4000QAAD8_CORE.tar",
+          "W4AM{v}WW4000QAAD8_WKT.tar",
+          "W4AM{v}WW4000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "rdf_mac",
+        "local_dir": "__rdf",
+        "here_product": "Macau",
+        "here_release": ["Macau {v} RDF"],
+        "check_method": "check_file_with_version",
+        "standalone_version": "True",
+        "ref_files": [
+          "WNAM{v}WWN000QAAD8_ADAS.tar",
+          "WNAM{v}WWN000QAAD8_CORE.tar",
+          "WNAM{v}WWN000QAAD8_WKT.tar",
+          "WNAM{v}WWN000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "check_method": "check_file_fixed_name",
+        "ref_files": ["HKG.zip","MAC.zip"],
+        "standalone_version": "True",
+        "action": "reuse"
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_HKG_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv",
+                      "{v}_MAC_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"],
+        "standalone_version": "True",
+        "action": "reuse"
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["HKG", "MAC"],
+        "standalone_version": "True",
+        "action": "reuse"
+      }
+    ]
+  },
+  "MEA": {
+    "RAW-RDF+": [
+      {
+        "name": "rdf",
+        "local_dir": "__rdf",
+        "here_product": "Europe, Middle East, Africa",
+        "here_release": ["Middle East, Africa {v} RDF"],
+        "check_method": "check_file_with_version",
+        "ref_files": [
+          "VMAM{v}WVM000QAAD8_ADAS.tar",
+          "VMAM{v}WVM000QAAD8_CORE.tar",
+          "VMAM{v}WVM000QAAD8_WKT.tar",
+          "VMAM{v}WVM000QAAD8_rdf_customer_software.tar"]
+      },
+      {
+        "name": "landmark",
+        "local_dir": "components/3dlandmark_vendor",
+        "check_method": "check_file_fixed_name",
+        "ref_files": [
+          "AGO.zip", "ARE.zip", "BDI.zip", "BEN.zip", "BHR.zip", "BWA.zip", "CIV.zip", "DZA.zip", "EGY.zip", "GHA.zip",
+          "IRQ.zip", "ISR.zip", "JOR.zip", "KEN.zip", "KWT.zip", "LBN.zip", "LBY.zip", "MAR.zip", "MOZ.zip", "MWI.zip",
+          "NGA.zip", "OMN.zip", "QAT.zip", "RWA.zip", "SAU.zip", "TGO.zip", "TUN.zip", "TZA.zip", "UGA.zip", "ZAF.zip",
+          "ZMB.zip"],
+        "action": "reuse"
+      },
+      {
+        "name": "gjv",
+        "local_dir": "components/GJV",
+        "check_method": "check_file_with_version",
+        "ref_files": ["{v}_MEA_2D_Generalized_Junctions_2D_Generalized_Signs_LAT.csv"],
+        "action": "reuse"
+      },
+      {
+        "name": "speed_camera",
+        "local_dir": "components/speed_camera",
+        "check_method": "check_by_folder",
+        "ref_files": ["ARE", "BHR", "ISR", "KWT", "OMN", "QAT", "SAU", "ZAF"],
+        "action": "reuse"
+      }
+    ]
+   }
+}
