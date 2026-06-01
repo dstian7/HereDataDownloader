@@ -16,6 +16,11 @@ class TestHttpDownloader(unittest.TestCase):
 
     def setUp(self):
         """Set up test fixtures before each test method"""
+        self._saved_env = {
+            key: os.environ.get(key) for key in ('HERE_USERNAME', 'HERE_PASSWORD')
+        }
+        os.environ['HERE_USERNAME'] = 'test_user'
+        os.environ['HERE_PASSWORD'] = 'test_password'
         self.downloader = HttpDownloader()
         self.test_dir = tempfile.mkdtemp()
 
@@ -25,6 +30,11 @@ class TestHttpDownloader(unittest.TestCase):
             shutil.rmtree(self.test_dir)
         if self.downloader.session:
             self.downloader.session.close()
+        for key, value in self._saved_env.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
 
     def test_init(self):
         """Test HttpDownloader initialization"""
@@ -374,10 +384,21 @@ class TestHttpDownloader(unittest.TestCase):
 
     def test_credential_and_url(self):
         """Test credential and URL configuration"""
-        self.assertIn('username', HttpDownloader.credential)
-        self.assertIn('password', HttpDownloader.credential)
+        self.assertEqual(self.downloader.credential['username'], 'test_user')
+        self.assertEqual(self.downloader.credential['password'], 'test_password')
         self.assertTrue(HttpDownloader.url_prefix.startswith('https://'))
         self.assertEqual(HttpDownloader.timeout, 30)
+
+    def test_init_raises_when_env_vars_missing(self):
+        """HttpDownloader.__init__ must fail fast when credentials are not set"""
+        for missing in ('HERE_USERNAME', 'HERE_PASSWORD'):
+            with self.subTest(missing=missing):
+                saved = os.environ.pop(missing)
+                try:
+                    with self.assertRaises(RuntimeError):
+                        HttpDownloader()
+                finally:
+                    os.environ[missing] = saved
 
 
 if __name__ == '__main__':
