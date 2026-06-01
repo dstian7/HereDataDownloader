@@ -30,10 +30,18 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          additional_permissions: |
+            mcp__github__create_pull_request
+            mcp__github__update_pull_request
+            mcp__github__get_pull_request
+            mcp__github__list_pull_requests
+          claude_args: |
+            --allowedTools "Bash(git:*),Bash(gh:*),mcp__github__create_pull_request,mcp__github__update_pull_request,mcp__github__get_pull_request,mcp__github__list_pull_requests"
           prompt: |
             Read the full context from the triggering GitHub issue or pull request comment.
 
-            Your job is to:
+            If code changes for this issue already exist on a Claude branch, detect that branch and create or update a pull request from it into main.
+            Otherwise:
             1. Understand the requested change.
             2. Implement the change in code.
             3. Add or update tests when appropriate.
@@ -46,4 +54,5 @@ jobs:
                - any risks or follow-up items,
                - a reference to the triggering issue.
 
+            You must create or update the pull request before finishing when changes exist.
             If the request is unclear, ask a concise clarification question instead of stopping silently.
