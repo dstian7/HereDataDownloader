@@ -5,8 +5,6 @@ on:
     types: [created]
   pull_request_review_comment:
     types: [created]
-  issues:
-    types: [opened, assigned]
 
 permissions:
   contents: write
@@ -18,14 +16,34 @@ jobs:
   claude:
     if: |
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'issues' && contains(github.event.issue.body, '@claude'))
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude'))
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - uses: anthropics/claude-code-action@v1
+      - name: Run Claude Code Action
+        uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Read the full context from the triggering GitHub issue or pull request comment.
+
+            Your job is to:
+            1. Understand the requested change.
+            2. Implement the change in code.
+            3. Add or update tests when appropriate.
+            4. Commit the changes to the working branch.
+            5. Create a pull request if one does not already exist.
+            6. If a pull request already exists for this branch, update it instead of creating a duplicate.
+            7. In the pull request description, include:
+               - a short summary of the change,
+               - test notes,
+               - any risks or follow-up items,
+               - a reference to the triggering issue.
+
+            If the request is unclear, ask a concise clarification question instead of stopping silently.
