@@ -1,90 +1,96 @@
-<html>
-<script src="javascript/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script>
-function get_components_info(details){
-    var html = "<tr><td style='background:#F0F8FF;font-weight:900'>file name</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>ref file name</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>file size</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>ref file size</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>size change</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>status</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>message</td>";
-
-	var datas = [];
-	var data_rowspans = [];
-
-    for (var i in details) {
-        detail_info = details[i]
-        html += '<tr><td>' + detail_info.file_name + '</td>';
-        html += '<td>' + detail_info.ref_file_name + '</td>';
-        html += '<td>' + detail_info.file_size + '</td>';
-        html += '<td>' + detail_info.ref_file_size + '</td>';
-        size_change = parseInt(detail_info.file_size - detail_info.ref_file_size);
-        html += '<td>' + size_change + '</td>';
-        var status_background_color = "#FFFFFF";
-	        if (detail_info.status == "warning") {
-	            status_background_color = "#FFFF66";
-	        }
-	        else if(detail_info.status == "error") {
-	            status_background_color = "#FF2222";
-	        }
-	        else if(detail_info.status == "not ready") {
-	            status_background_color = "#AAAAAA";
-	        }
-	    html += '<td style="background-color:' + status_background_color + '">' + detail_info.status + '</td>';
-        html += '<td>' + detail_info.message + '</td></tr>';
-    }
-    return html;
-}
-
-$(function(){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const component = urlParams.get('component')
-
-    $.getJSON(component + ".json", function(json) {
-        $("#table_result").html(get_components_info(json.details));
-        $("#report_title").text(json.component + " raw data check report");
-    });
-});
-
-</script>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <style type="text/css">
-        table
-        {
-            padding: 0;
-            margin: 0;
-            border-collapse: collapse;
-        }
-        td
-        {
-            border: 1px solid #009999;
-            padding: 6px 6px 6px 12px;
-            color: #4f6b72;
-            text-align: left;
-        }
-        .content {
-         flex: 1;
-        }
-        body
-        {
-         min-height: 100%;
-         display: flex;
-         flex-direction: column;
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Component detail report</title>
+    <link rel="stylesheet" href="javascript/report.css"/>
 </head>
 <body>
-<div class="content">
-    <center>
-        <hr/>
-        <h1 id="report_title"></h1>
-        <table id="table_result" width="90%">
-        </table>
-        <a href="result_report.html" id="main_link">Back to main</a>
-    </center>
+<div class="page">
+    <header class="report-header">
+        <div>
+            <h1 id="report_title">Component detail report</h1>
+            <div class="report-meta">
+                <a class="back-link" href="result_report.html">&larr; Back to main</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="toolbar" role="region" aria-label="Report filters">
+            <label class="search-box">
+                <span class="visually-hidden">Search</span>
+                <input type="search" id="searchInput" placeholder="Search file, message&hellip;" autocomplete="off"/>
+            </label>
+            <div class="filter-chips" role="group" aria-label="Filter by status" id="statusChips"></div>
+        </div>
+
+        <div class="row-counter" id="rowCounter" aria-live="polite"></div>
+
+        <section class="table-wrap" aria-label="Component file table">
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-key="file_name" tabindex="0">file name <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="ref_file_name" tabindex="0">ref file name <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="file_size" tabindex="0">file size <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="ref_file_size" tabindex="0">ref file size <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="size_change" tabindex="0">size change <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="statusKey" tabindex="0">status <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="message" tabindex="0">message <span class="sort-indicator"></span></th>
+                    </tr>
+                </thead>
+                <tbody id="resultBody"></tbody>
+            </table>
+        </section>
+    </main>
 </div>
+
+<script src="javascript/jquery-3.2.1.min.js"></script>
+<script src="javascript/report-core.js"></script>
+<script src="javascript/report-render.js"></script>
+<script src="javascript/report-init.js"></script>
+<script>
+(function() {
+    var params = new URLSearchParams(window.location.search);
+    var component = params.get("component") || "";
+
+    window.ReportApp.start({
+        jsonFile: function() { return component ? component + ".json" : ""; },
+        columns: [
+            {key: "file_name", label: "file name"},
+            {key: "ref_file_name", label: "ref file name"},
+            {key: "file_size", label: "file size", render: "size"},
+            {key: "ref_file_size", label: "ref file size", render: "size"},
+            {key: "size_change", label: "size change", render: "delta"},
+            {key: "statusKey", label: "status", render: "status"},
+            {key: "message", label: "message"}
+        ],
+        flatten: function(json) {
+            return (json.details || []).map(function(d) {
+                var size = Number(d.file_size);
+                var refSize = Number(d.ref_file_size);
+                var sizeChange = (isFinite(size) && isFinite(refSize)) ? size - refSize : "";
+                return {
+                    file_name: d.file_name || "",
+                    ref_file_name: d.ref_file_name || "",
+                    file_size: d.file_size,
+                    ref_file_size: d.ref_file_size,
+                    size_change: sizeChange,
+                    status: d.status || "",
+                    statusKey: window.ReportApp.statusKey(d.status),
+                    message: d.message || ""
+                };
+            });
+        },
+        setHeader: function(json) {
+            var name = json.component || component;
+            document.getElementById("report_title").textContent = name + " raw data check report";
+        },
+        searchKeys: ["file_name", "ref_file_name", "status", "message"]
+    });
+})();
+</script>
 </body>
 </html>

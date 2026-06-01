@@ -1,112 +1,116 @@
-<html>
-<script src="javascript/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script>
-function get_components_info(components){
-    var html = "<tr><td style='background:#F0F8FF;font-weight:900'>data</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>component</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>version</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>HERE version</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>status</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>ref count</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>pass</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>warning</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>error</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>update time</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>here schedule</td>" +
-    "<td style='background:#F0F8FF;font-weight:900'>detail</td></tr>";
-	var datas = [];
-	var data_rowspans = [];
-
-    for (var i in components) {
-        cygnus_components = components[i]
-        for (var j in cygnus_components) {
-            comp = cygnus_components[j];
-	        html += '<tr>';
-	        if (j == 0) {
-	            html += '<td rowspan="' + cygnus_components.length + '">' + i + '</td>';
-	        }
-	        html += '<td>' + comp.name + '</td>';
-	        var status_background_color = "#FFFFFF";
-	        if (comp.status == "warning") {
-	            status_background_color = "#FFFF66";
-	        }
-	        else if(comp.status == "error") {
-	            status_background_color = "#FF2222";
-	        }
-	        else if(comp.status == "not ready") {
-	            status_background_color = "#AAAAAA";
-	        }
-	        html += '<td>' + (comp.version ? comp.version: '') + '</td>';
-	        html += '<td>' + (comp.here_version ? comp.here_version: '') + '</td>';
-	        html += '<td style="background-color:' + status_background_color + '">' + comp.status + '</td>';
-	        html += '<td>' + (comp.ref_count ? comp.ref_count: '') + '</td>';
-	        html += '<td>' + (comp.pass ? comp.pass : '') + '</td>';
-	        html += '<td>' + (comp.warning ? comp.warning : '') + '</td>';
-	        html += '<td>' + (comp.error ? comp.error : '') + '</td>';
-	        html += '<td>' + (comp.update_time ? comp.update_time : '') + '</td>';
-	        html += '<td>' + (comp.here_schedule ? comp.here_schedule : '') + '</td>';
-	        if (comp.detail_link) {
-	            html += '<td><a href="' + comp.detail_link + '">Report</a></td></tr>';
-	        }
-	        else {
-	            html += '<td></td></tr>';
-	        }
-	    }
-    }
-    return html;
-}
-
-$(function(){
-    $.getJSON("main_result.json", function(json) {
-        $("#table_result").html(get_components_info(json.cygnus_components));
-        $("#report_title").text(json.region + " " + json.version + " raw data check report");
-        $("#report_time").text(json.time);
-        var doc_item = document.getElementById('documents');
-        if (json.version.includes("Q")) {
-            doc_item.href = "http://d-tempo-01.telenav.com/docs/HERE/" + json.version;
-        } else {
-            doc_item.style = "display:none";
-        }
-    });
-});
-
-</script>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <style type="text/css">
-        table
-        {
-            padding: 0;
-            margin: 0;
-            border-collapse: collapse;
-        }
-        td
-        {
-            border: 1px solid #009999;
-            padding: 6px 6px 6px 12px;
-            color: #4f6b72;
-            text-align: left;
-        }
-        .content {
-         flex: 1;
-        }
-        body
-        {
-         min-height: 100%;
-         display: flex;
-         flex-direction: column;
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Raw data check report</title>
+    <link rel="stylesheet" href="javascript/report.css"/>
 </head>
 <body>
-<div class="content">
-    <center>
-        <hr/>
-        <h1 id="report_title"></h1>
-        <h5><label id="report_time"/></h5>
-        <table id="table_result" width="90%">
-        </table>
-    </center>
+<div class="page">
+    <header class="report-header">
+        <div>
+            <h1 id="report_title">Raw data check report</h1>
+            <div class="report-meta">
+                <span id="report_time" aria-label="Report generation time"></span>
+                <a id="documents" href="#" target="_blank" rel="noopener">Documents</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="toolbar" role="region" aria-label="Report filters">
+            <label class="search-box">
+                <span class="visually-hidden">Search</span>
+                <input type="search" id="searchInput" placeholder="Search data, component, version&hellip;" autocomplete="off"/>
+            </label>
+            <div class="filter-chips" role="group" aria-label="Filter by status" id="statusChips"></div>
+        </div>
+
+        <div class="row-counter" id="rowCounter" aria-live="polite"></div>
+
+        <section class="table-wrap" aria-label="Component status table">
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-key="data" tabindex="0">data <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="name" tabindex="0">component <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="version" tabindex="0">version <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="here_version" tabindex="0">HERE version <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="statusKey" tabindex="0">status <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="ref_count" tabindex="0">ref count <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="pass" tabindex="0">pass <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="warning" tabindex="0">warning <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="error" tabindex="0">error <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="update_time" tabindex="0">update time <span class="sort-indicator"></span></th>
+                        <th class="sortable" data-key="here_schedule" tabindex="0">here schedule <span class="sort-indicator"></span></th>
+                        <th>detail</th>
+                    </tr>
+                </thead>
+                <tbody id="resultBody"></tbody>
+            </table>
+        </section>
+    </main>
 </div>
+
+<script src="javascript/jquery-3.2.1.min.js"></script>
+<script src="javascript/report-core.js"></script>
+<script src="javascript/report-render.js"></script>
+<script src="javascript/report-init.js"></script>
+<script>
+window.ReportApp.start({
+    jsonFile: "main_result.json",
+    columns: [
+        {key: "data", label: "data", group: true},
+        {key: "name", label: "component"},
+        {key: "version", label: "version"},
+        {key: "here_version", label: "HERE version"},
+        {key: "statusKey", label: "status", render: "status"},
+        {key: "ref_count", label: "ref count"},
+        {key: "pass", label: "pass"},
+        {key: "warning", label: "warning"},
+        {key: "error", label: "error"},
+        {key: "update_time", label: "update time"},
+        {key: "here_schedule", label: "here schedule"},
+        {key: "detail_link", label: "detail", render: "link"}
+    ],
+    flatten: function(json) {
+        var rows = [];
+        var components = json.cygnus_components || {};
+        Object.keys(components).forEach(function(dataKey) {
+            (components[dataKey] || []).forEach(function(comp) {
+                rows.push({
+                    data: dataKey,
+                    name: comp.name || "",
+                    version: comp.version || "",
+                    here_version: comp.here_version || "",
+                    status: comp.status || "",
+                    statusKey: window.ReportApp.statusKey(comp.status),
+                    ref_count: comp.ref_count || "",
+                    pass: comp.pass || "",
+                    warning: comp.warning || "",
+                    error: comp.error || "",
+                    update_time: comp.update_time || "",
+                    here_schedule: comp.here_schedule || "",
+                    detail_link: comp.detail_link || ""
+                });
+            });
+        });
+        return rows;
+    },
+    setHeader: function(json) {
+        var title = ((json.region || "") + " " + (json.version || "") + " raw data check report").trim();
+        document.getElementById("report_title").textContent = title || "Raw data check report";
+        document.getElementById("report_time").textContent = json.time || "";
+        var docItem = document.getElementById("documents");
+        if (json.version && String(json.version).indexOf("Q") !== -1) {
+            docItem.href = "http://d-tempo-01.telenav.com/docs/HERE/" + json.version;
+        } else {
+            docItem.style.display = "none";
+        }
+    },
+    searchKeys: ["data", "name", "version", "here_version", "status", "update_time", "here_schedule"]
+});
+</script>
 </body>
 </html>
