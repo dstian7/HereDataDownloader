@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 
 
 class HttpDownloader(object):
-    credential = {'username': 'tn_data_platform@telenav.com', 'password': 'upolar2026_1'}
     url_prefix = "https://navteq.subscribenet.com/control/navt/"
     timeout = 30
 
@@ -15,6 +14,16 @@ class HttpDownloader(object):
     DOWNLOAD_STATUS_ERROR = -1
 
     def __init__(self):
+        try:
+            self.credential = {
+                'username': os.environ['HERE_USERNAME'],
+                'password': os.environ['HERE_PASSWORD'],
+            }
+        except KeyError as missing:
+            raise RuntimeError(
+                "Missing required environment variable {}. "
+                "Set HERE_USERNAME and HERE_PASSWORD before running HttpDownloader.".format(missing)
+            )
         self.session = None
         self.home_page = None
         self.product_name = ""
